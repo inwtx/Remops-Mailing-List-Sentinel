@@ -5,7 +5,7 @@ Linux script to notify by email when changes occur to the Remops Mailing List. N
 #!/bin/bash
 #
 #====================================================================================#
-# RemopsMailingList.sh v1.1 (beta)                                                   #
+# RemopsMailingList.sh v1.2 (beta)                                                   #
 #                                                                                    #
 # This script is used to check the Remops Mailing List for new messages.             #
 # It is run by a cronjob and will send an email to notify you that the               #
@@ -20,6 +20,7 @@ Linux script to notify by email when changes occur to the Remops Mailing List. N
 #                                                                                    #
 #====================================================================================#
 
+export PATH=$PATH:/usr/sbin
 
 filePath=${0%/*}  # current file path
 
