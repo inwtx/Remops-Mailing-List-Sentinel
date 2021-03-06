@@ -1,5 +1,5 @@
 # Remops-Mailing-List-Sentinel
-Linux script to notify by email when changes occur in the Remops Mailing List. - (beta)  
+Linux script to notify by email when changes occur to the Remops Mailing List. - (beta)  
   
 ```
 #!/bin/bash
