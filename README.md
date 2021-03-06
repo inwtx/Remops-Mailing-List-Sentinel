@@ -12,7 +12,7 @@ Linux script to notify by email when changes occur to the Remops Mailing List. -
 # current month's mailing list has a new entry.                                      #
 #                                                                                    #
 # Place a notification email address in the 'emailaddress' field below               #
-# You will need wget.  Installation: 'apt-get install wget'                          #
+# You will need have wget installed.  Installation: 'apt-get install wget'                          #
 #                                                                                    #
 # Cronjob examples:                                                                  #
 # */1 * * * * /path/to/RemopsMailingList.sh &> /dev/null  # cron to run every minute #
