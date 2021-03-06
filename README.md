@@ -1,5 +1,5 @@
 # Remops-Mailing-List-Sentinel
-Linux script to notify when changes occur in the Remops Mailing List. - (beta)  
+Linux script to notify by email when changes occur in the Remops Mailing List. - (beta)  
   
 ```
 #!/bin/bash
@@ -10,7 +10,6 @@ Linux script to notify when changes occur in the Remops Mailing List. - (beta)
 # This script is used to check the Remops Mailing List for new messages.             #
 # It is run by a cronjob and will send an email to notify you that the               #
 # current month's mailing list has a new entry.                                      #
-# RemopsMailingList.sh should br run in a folder of its own.                         #
 #                                                                                    #
 # Place a notification email address in the 'emailaddress' field below               #
 # You will need wget.  Installation: 'apt-get install wget'                          #
@@ -37,9 +36,9 @@ fi
 wget --no-check-certificate http://lists.mixmin.net/pipermail/remops/index.html   # get Remops Mailing List
 
 RMLvar=$(grep -e '\.txt\"' $filePath/index.html)                                  # get top text line  =  <td><A href="2021-March.txt">[ Text 1 KB ]</a></td>
-echo "RMLvar = $RMLvar"                                                             # display it
+echo "RMLvar = $RMLvar"                                                           # display it
 RMLvarMo=$(echo $RMLvar | sed -n 's/.*\-//;s/\..*//p')                            # get month  =  March
-echo "RMLvarMo = $RMLvarMo"                                                         # display it
+echo "RMLvarMo = $RMLvarMo"                                                       # display it
 
 if [[ ! $RMLvarMo == $(date +"%B") ]]; then                                       # if list not current month, have new month
    cat /dev/null > $filePath/RemopsMailingList.sav                                # clear remop text for updated data comparison
