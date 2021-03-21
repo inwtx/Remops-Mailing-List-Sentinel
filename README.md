@@ -34,7 +34,7 @@ if [ ! -e $filePath/RemopsMailingList.sav ]; then
    cat /dev/null > $filePath/RemopsMailingList.sav
 fi
 
-wget --no-check-certificate http://lists.mixmin.net/pipermail/remops/index.html   # get Remops Mailing List
+wget --no-check-certificate http://lists.mixmin.net/pipermail/remops/index.html -O $filePath/index.html  # get Remops Mailing List
 
 RMLvar=$(grep -e '\.txt\"' $filePath/index.html)                                  # get top text line  =  <td><A href="2021-March.txt">[ Text 1 KB ]</a></td>
 echo "RMLvar = $RMLvar"                                                           # display it
